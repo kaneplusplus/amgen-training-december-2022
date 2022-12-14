@@ -1,0 +1,355 @@
+---
+title: "Visualization"
+output:
+  html_document:
+    code_folding: true
+---
+
+# Panitumumab: Project DataSphere
+
+## [What is it?](https://www.projectdatasphere.org)
+
+## [Access Data](https://www.projectdatasphere.org/data-platform/access-data)
+
+## [Our study](https://beta.clinicaltrials.gov/study/NCT00364013?distance=50&term=NCT00364013&rank=1)
+
+## `map` iterates over iterables
+
+```{r}
+library(haven)
+library(purrr)
+
+pani_path = file.path("NCT00364013", "AllProvidedFiles_309", "PDS_DSA_20050203")
+ff_files = dir(pani_path)
+ff_names = gsub("_pds2019.sas7bdat", "", ff_files)
+
+dl = map(file.path(pani_path, ff_files), ~ read_sas(.x))
+
+dl = map(file.path(pani_path, ff_files), read_sas)
+
+fl = list(
+  function(x) median(x),
+  function(x) mean(x)
+)
+
+vs = rnorm(10)
+
+for (i in seq_along(fl)) {
+  fl[[i]](vs)
+}
+
+for (i in seq_along(fl)) {
+  print(fl[[i]](vs))
+}
+
+ret = c()
+for (x in fl) {
+  ret = c(ret, x(vs))
+}
+
+map_dbl(fl, ~ .x(vs))
+
+names(dl) = ff_names
+```
+
+## `gtsummary` uses the `label` attribute
+
+```{r}
+library(gtsummary)
+
+attributes(dl$adsl$AGE)
+
+dl$adsl |> 
+  select(TRT, DTH, AGE, SEX, B_WEIGHT, B_HEIGHT, RACE) |>
+  tbl_summary(by = TRT)
+
+adsl_temp = dl$adsl
+attributes(dl$adsl_temp$AGE)$label = "Age at conclusion"
+
+adsl_temp |> 
+  select(TRT, DTH, AGE, SEX, B_WEIGHT, B_HEIGHT, RACE) |>
+  tbl_summary(by = TRT)
+```
+
+```{r}
+dl$biomark |>
+  select(-SUBJID) |>
+  tbl_summary()
+```
+
+## Joining data
+
+```{r}
+library(dplyr)
+
+left_join(
+  tibble(c1 = c("a", "b", "c"), c2 = rnorm(3)),
+  tibble(c1 = c("a", "d", "c"), c3 = rnorm(3)),
+  by = "c1"
+)
+
+demo = left_join(dl$adsl, dl$biomark, by = "SUBJID")
+demo$arm = paste(demo$TRT, demo$BMMTR1, sep = ", ")
+demo |> 
+  filter(BMMTR1 %in% c("Mutant", "Wild-type")) |>
+  select(arm, DTH, AGE, SEX, B_WEIGHT, B_HEIGHT, RACE) |>
+  tbl_summary(by = "arm")
+```
+
+## More on joining: Beware of repeated `by` values
+
+```{r}
+t1 = tibble(c1 = c("a", "b", "c"), c2 = rnorm(3))
+t2 = tibble(c1 = c("a", "d", "c", "c"), c3 = rnorm(length(c1)))
+
+left_join(t1, t2, by = "c1")
+
+t3 = tibble(c1 = c("a", "b", "c", "c"), c2 = rnorm(length(c1)))
+
+left_join(t2, t3, by = "c1")
+```
+## Back to Panitumumab
+
+```{r}
+library(survival)
+library(survminer)
+
+demo$DTHDY |> attributes()
+demo$DTH |> attributes()
+
+ggsurvplot(survfit(Surv(DTHDY, DTH) ~ arm, data = demo), data = demo)
+```
+
+## What about adverse events... a start
+```{r}
+library(ggplot2)
+library(DT)
+
+ae = dl$adae
+
+map_chr(ae, ~ attributes(.x)$label)
+
+get_label = function(x) {
+  attributes(x)$label
+}
+
+tibble(Variable = names(ae), Label = map_chr(ae, get_label)) |>
+  datatable()
+
+ae |>
+  group_by(AEPT) |>
+  summarize(n = n()) |>
+  ggplot(aes(x = AEPT, y = n)) +
+    geom_col()
+```
+
+## Better but not quite there
+
+```{r}
+ae |>
+  group_by(AEPT) |>
+  summarize(n = n()) |>
+  ggplot(aes(x = AEPT, y = n)) +
+    geom_col() +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+```{r}
+library(forcats)
+
+ae |>
+  mutate(AEPT = fct_lump_prop(AEPT, prop = 0.001)) |>
+  group_by(AEPT) |>
+  summarize(n = n()) |>
+  arrange(desc(n)) |>
+  mutate(aept = factor(AEPT, levels = AEPT)) |>
+  ggplot(aes(x = aept, y = n)) +
+    geom_col() +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+    scale_y_log10() +
+    ylab("Count") +
+    xlab("Adverse Event Condition")
+```
+
+# Create a plot of frequency of adverse events (more on reordering factors)
+
+```{r}
+library(swimplot)
+
+p = ae |>
+  filter(SUBJID == "000007") |>
+  mutate(AESEVCD = factor(AESEVCD, levels = as.character(1:4)))
+
+gp = swimmer_plot(
+  as.data.frame(p), 
+  id = "AEPT", 
+  start = "AESTDYI", 
+  end = "AEENDYI",
+  name_fill = "AESEVCD")
+
+plot_aes = function(aep) {
+  aep |>
+    as.data.frame() |>
+    mutate(AESEVCD = factor(AESEVCD, levels = as.character(1:4))) |>
+    swimmer_plot(
+      id = "AEPT", 
+      start = "AESTDYI", 
+      end = "AEENDYI",
+      name_fill = "AESEVCD"
+    )
+}
+
+plot_aes(p)
+```
+
+## Plot indivdual AEs
+
+```{r}
+library(tidyr)
+
+nrow(demo) == length(unique(demo$SUBJID))
+
+ae_nest = ae |>
+  group_by(SUBJID) |>
+  group_nest(.key = "ae")
+
+dae = inner_join(demo, ae_nest, by = "SUBJID")
+```
+
+## An `ae_plot` column
+
+```{r}
+dae = dae |>
+  filter(map_lgl(ae, ~ nrow(na.omit(.x)) != 0)) |>
+  mutate(ae_plot = map(ae, plot_aes))
+```
+
+## Cognostics: COmputer-Guided-diagNOSTICS
+
+```{r}
+dae$total_ae = map_dbl(dae$ae, nrow)
+dae$worst_ae = map_dbl(dae$ae, ~ max(.x$AESEVCD, na.rm = TRUE))
+```
+
+## Cosgnostic-guided data exploration
+
+```{r}
+library(trelliscopejs)
+dae |> 
+  select(SUBJID, ATRT, DTH, total_ae, worst_ae, ae_plot) |>
+  trelliscope("Adverse Events", panel_col = "ae_plot")
+```
+
+# Pivoting and faceting
+
+```{r}
+library(tidyr)
+
+# Get a table of adverse events and their severity.
+ae_counts = ae |>
+  group_by(AEPT) |>
+  summarize(
+    sev1 = sum(AESEVCD == 1),
+    sev2 = sum(AESEVCD == 2),
+    sev3 = sum(AESEVCD == 3),
+    sev4 = sum(AESEVCD == 4),
+  )
+
+# An abstract-er version
+
+# Turn a table of severity codes into a tibble.
+table_to_tibble = function(x) {
+  ret = x$AESEVCD |>
+    table() |>
+    as.matrix() |>
+    t() |>
+    as_tibble()
+  names(ret) = paste0("sev", names(ret))
+  ret
+}
+
+ae_counts = ae |>
+  select(AEPT, AESEVCD) |>
+  group_by(AEPT) |>
+  group_nest() |>
+  mutate(sev_tables = map(data, table_to_tibble)) |>
+  select(AEPT, sev_tables) |>
+  unnest(sev_tables) |>
+  mutate(across(-AEPT, ~ if_else(is.na(.x), 0L, .x) ))
+
+# A "fun" exercise but was it worth it?
+# Note: I might want an extra step to make sure I got all of the 
+# severity codes.
+
+acne = ae_counts[2,]
+
+# Create a histogram of the severity counts for an ae 
+acne |> 
+  pivot_longer(-AEPT, names_to = "severity_code") |>
+  ggplot(aes(x = severity_code, y = value)) + 
+    geom_col() +
+    theme_bw()
+
+# Create a long version of the severity counts
+# for all AE's ordered by the total number of
+# AE codes.
+ae_counts_tt = ae_counts |> 
+  mutate(total = sev1 + sev2 + sev3 + sev4) |>
+  arrange(desc(total)) |>
+  mutate(AEPT = factor(AEPT, levels = AEPT)) |>
+  select(-total) |>
+  pivot_longer(-AEPT) |>
+  mutate(name = gsub("sev", "", name))
+
+# Show the 10 most prevalent.
+ggplot(ae_counts_tt |> head(10), aes(x = name, y = value)) +
+  geom_col() + 
+  theme_bw() +
+  facet_wrap("AEPT") +
+  ylab("Count") +
+  xlab("Severity")
+```
+
+```{r}
+library(patchwork)
+aec_tt = ae_counts_tt[1:8,]
+
+p1 = ggplot(aec_tt, aes(x = name, y = value)) +
+  geom_col() + 
+  theme_bw() +
+  facet_grid(~ AEPT)
+
+p1
+
+p2 = ggplot(aec_tt, aes(x = name, y = value)) +
+  geom_col() + 
+  theme_bw() +
+  facet_grid(AEPT ~ .)
+
+p2
+
+p1 / p2
+
+(p1 + p2) / p1
+
+ggplot(aec_tt, aes(x = name, y = value, group = AEPT, fill = AEPT)) +
+  geom_col() +
+  theme_bw()
+
+ggplot(aec_tt, aes(x = name, y = value, group = AEPT, fill = AEPT)) +
+  geom_col(position = "dodge") +
+  theme_bw()
+
+# Is this better than faceting?
+```
+
+# Cheatsheets [here](https://www.rstudio.com/resources/cheatsheets/)
+
+# Unsolicited advice
+
+1. Don't abstract until you need to (there are only 4 severity codes). The correctness of your current code should be prioritized.
+2. If you are going to abstract, have a reference to compare against.
+3. Pivot on the variables you need. It's already complicated enough.
+4. Faceting is for showing things that are comparable. `patchwork` is for showing different aspects of the same something.
