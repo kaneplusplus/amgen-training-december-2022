@@ -1,0 +1,391 @@
+id,nct_id,intervention_type,name,description
+19556452,NCT01387269,Drug,Anamorelin HCl,Anamorelin HCl will be orally administered daily at least one hour before meal
+19556453,NCT01387269,Drug,Placebo,"Placebo tablets identical in appearance to active tablets; oral administration QD for 12 weeks, at least 1 hour before meal"
+19556454,NCT01387282,Drug,Anamorelin HCl,Anamorelin HCL 100 mg will be orally administered daily at least 1 hour prior to meal
+19556455,NCT01387282,Drug,Placebo,"Placebo tablets identical in appearance to active tablets; oral administration QD for 12 weeks, at least 1 hour prior to meal before the first meal of the day."
+19556799,NCT01395914,Drug,Anamorelin HCl,NA
+19556800,NCT01395914,Drug,Placebo,NA
+19560570,NCT01515189,Biological,Ipilimumab,NA
+19563008,NCT01589094,Drug,Gemcitabine and Cisplatin (DD GC),"Patients will receive six cycles of GC administered every 14 days. Gemcitabine 2,500 mg/m2 will be administered intravenously on day 1 and cisplatin 35 mg/m2 will be administered intravenously on days 1 and 2 of a 14 days cycle (with Peg GCSF). A total of six cycles of therapy will be administered followed by radical cystectomy with bilateral pelvic lymph node dissection (PLND)"
+19564854,NCT01605227,Drug,cabozantinib,Tablets taken orally once-daily
+19564855,NCT01605227,Drug,prednisone,Taken twice a day orally. Commercially-obtained prednisone tablets will be over-encapsulated in order to blind identity.
+19566774,NCT01667419,Drug,Vemurafenib,4 tablets of vemurafenib 240 mg each (total 960 mg) were administered orally as per the schedule specified in the respective arm.
+19566775,NCT01667419,Drug,Placebo,Placebo matching to vemurafenib were administered orally as per the schedule specified in the respective arm.
+19567304,NCT01684878,Drug,Gemcitabine (Chemotherapy),Participants administered gemcitabine at a dosage of 1000 milligrams per square meter (mg/m^2) intravenous (IV) infusion on Days 1 and 8 every 3 weeks.
+19567305,NCT01684878,Drug,Paclitaxel (Chemotherapy),"Participants administered paclitaxel at a dosage of 80 mg/m^2 as 1 hour IV infusion on Days 1, 8 and 15 every 3 weeks."
+19567306,NCT01684878,Drug,Pertuzumab,"Participants administered pertuzumab 840 milligrams (mg) IV infusion on Day 1 of the first treatment cycle as a loading dose, followed by 420 mg on Day 1 of each subsequent 3 weekly cycle."
+19567307,NCT01684878,Drug,Placebo,Participants administered pertuzumab matching placebo IV infusion on Day 1 of each 3 weekly cycle.
+19567308,NCT01684878,Drug,Topotecan (Chemotherapy),Participants administered topotecan at a dosage of 1.25 mg/m^2 as a 30 minute IV infusion daily on Days 1 to 5 every 3 weeks.
+19567657,NCT01695135,Drug,Abiraterone acetate,Abiraterone 1000 mg (4 x 250 mg tablets) taken orally once daily
+19567658,NCT01695135,Drug,Placebo,Placebo (4 tablets) taken orally once daily
+19567659,NCT01695135,Drug,Prednisone,Prednisone 5 mg tablet taken orally twice daily
+19567977,NCT01704651,Drug,Alvimopan,"Perioperative administration of oral alvimopan, 12mg twice daily, starting with 1 dose preoperative."
+19567978,NCT01704651,Drug,Placebo,"Perioperative administration of placebo, at same dosing interval as study drug."
+19570778,NCT01763164,Drug,MEK162,"MEK162 will be administered as a fixed dose of 45 mg (3 x 15 mg tablets) BID, with a glass of water and taken with or without food."
+19570779,NCT01763164,Drug,Dacarbazine,Patients randomized to dacarbazine will receive an IV infusion of dacarbazine 1000 mg/m2 over the course of 1 hour on day 1 and then every three weeks.
+19573789,NCT01866319,Biological,Pembrolizumab,"10 mg/kg IV, administered Q2W or Q3W based upon randomization."
+19573790,NCT01866319,Biological,Ipilimumab,3 mg/kg IV Q3W.
+19576043,NCT01920568,Biological,Denosumab 70 mg/mL,Denosumab will be given as a SC injection of 120 mg by administering a 1.7 mL volume in a single injection
+19576044,NCT01920568,Drug,Zoledronic acid 4 mg,Zoledronic acid 4 mg (or equivalent clearance-adjusted dose in subjects with baseline creatinine clearance <=60 ml/min) will be diluted in either 0.9% sodium chloride or 5% dextrose injection and administered IV.
+19576045,NCT01920568,Drug,Placebo IV,The placebo will consist of 1.7 mL 0.9% w/v sodium chloride
+19576046,NCT01920568,Drug,Placebo SC,The placebo will consist of either 0.9% w/v sodium chloride or 5% dextrose injection
+19576047,NCT01920568,Dietary Supplement,Calcium supplement,Subjects are strongly recommended to take daily supplements of at least 500 mg calcium from the day of consent and until completion of the Week 73 follow-up visit.
+19576048,NCT01920568,Dietary Supplement,Vitamin D supplement,Subjects are strongly recommended to take daily supplements of at least 400 IU of vitamin D from the day of consent and until completion of the Week 73 follow-up visit.
+19577056,NCT01953913,Drug,Afatinib,Patient will receive afatinib once daily
+19577815,NCT01974752,Drug,75mg selumetinib,selumetinib tablets p.o. twice daily taken in combination with dacarbazine 1000mg/m2 iv on day 1 of every 21-day cycle.
+19577816,NCT01974752,Drug,placebo,placebo tablets p.o. twice daily taken in combination with dacarbazine 1000mg/m2 iv on day 1 of every 21-day cycle.
+19577817,NCT01974752,Drug,Dacarbazine,dacarbazine 1000mg/m2 iv on day 1 of every 21-day cycle taken in combination with either selumetinib or placebo tablets p.o. twice daily.
+19579277,NCT02027428,Drug,Abraxane (Induction),"100 mg/m2 IV infusion over 30 minutes on Days 1 and 8 and 15 of each 21-day cycle, administered as standard of care"
+19579278,NCT02027428,Drug,Carboplatin (Induction),6 mg/min/mL IV on Day 1 of each 21-day cycle after completion of nab-paclitaxel infusion
+19579279,NCT02027428,Drug,Abraxane (Maintenance),"100 mg/m2 IV infusion over 30 minutes on Days 1 and 8 of each 21-day cycle, administered as standard of care"
+19579280,NCT02027428,Other,Best Supportive Care (Maintenance),"The best palliative care per investigator (including but not limited to: antibiotics, analgesics, antiemetics, thoracentesis, pleurodesis, blood transfusions, nutritional support, and/or focal external-beam radiation for control of pain, cough, dyspnea, or hemoptysis), excluding antineoplastic agents"
+19579281,NCT02027428,Drug,Abraxane (Induction),"100 mg/m2 IV infusion over 30 minutes on Days 1 and 8 and 15 of each 21-day cycle, administered as standard of care"
+19579282,NCT02027428,Drug,Carboplatin (Induction),"6 mg/min/mL IV on Day 1 of each 21-day cycle after completion of nab-paclitaxel infusion, administered as standard of care"
+19579283,NCT02027428,Other,Best Supportive Care (Maintenance),"The best palliative care per investigator (including but not limited to: antibiotics, analgesics, antiemetics, thoracentesis, pleurodesis, blood transfusions, nutritional support, and/or focal external-beam radiation for control of pain, cough, dyspnea, or hemoptysis), excluding antineoplastic agents"
+19579753,NCT02042443,Drug,Capecitabine,Given PO
+19579754,NCT02042443,Drug,Fluorouracil,Given IV
+19579755,NCT02042443,Other,Laboratory Biomarker Analysis,Correlative studies
+19579756,NCT02042443,Drug,Leucovorin Calcium,Given IV
+19579757,NCT02042443,Drug,Trametinib,Given PO
+19581705,NCT02111577,Biological,DCVAC/PCa,"DCVAC/PCa concurrently with docetaxel plus prednisone every 3 weeks (± 7 days). DCVAC/PCa was administered at least 7 days before or and at least 7 days after the nearest chemotherapy (days 8-15 of chemotherapy cycles). After discontinuation of chemotherapy for any reason, each following dose of DCVAC/PCa was given every 4 weeks (-7/+14 days) for up to a total of 15 doses."
+19581706,NCT02111577,Biological,Placebo,"Placebo concurrently with docetaxel plus prednisone every 3 weeks (± 7 days). Placebo was administered at least 7 days before or and at least 7 days after the nearest chemotherapy (days 8-15 of chemotherapy cycles). After discontinuation of chemotherapy for any reason, each following dose of placebo was given every 4 weeks (-7/+14 days) for up to a total of 15 doses."
+19586088,NCT02279732,Biological,Paclitaxel,NA
+19586089,NCT02279732,Biological,Carboplatin,NA
+19586090,NCT02279732,Biological,Ipilimumab,NA
+19586091,NCT02279732,Other,Placebo,"0.9% sodium chloride injection, USP, or 5% dextrose injection"
+19586726,NCT02302807,Drug,"Atezolizumab (MPDL3280A) [TECENTRIQ], an engineered anti-PDL1 antibody",Atezolizumab will be administered intravenously at a fixed dose of 1200 mg on Day 1 of each 21-day cycle.
+19586727,NCT02302807,Drug,Docetaxel,Docetaxel 75 mg/m^2 will be administered intravenously on Day 1 of each 21-day cycle.
+19586728,NCT02302807,Drug,Paclitaxel,Paclitaxel 175 mg/m^2 will be administered intravenously on Day 1 of each 21-day cycle.
+19586729,NCT02302807,Drug,Vinflunine,Vinflunine 320 mg/m^2 will be administered intravenously on Day 1 of each 21-day cycle.
+19586901,NCT02311907,Drug,Carboplatin,"Given IV, over 30 minutes per planned chemotherapy regimen"
+19586902,NCT02311907,Drug,Glutathione,"Given IV, over 15 minutes, immediately before chemotherapy administration"
+19586903,NCT02311907,Other,Laboratory Biomarker Analysis,Correlative studies
+19586904,NCT02311907,Drug,Paclitaxel,"Given IV, over 1 or 3 hours, per planned chemotherapy regimen"
+19586905,NCT02311907,Other,Placebo,Given IV
+19586906,NCT02311907,Other,Quality-of-Life Assessment,Ancillary studies
+19588245,NCT02364999,Drug,Bevacizumab-Pfizer,"Bevacizumab-Pfizer: 15 mg/kg IV on Day 1 of a 21-day cycle for each of at least 4 and no more than six (6) 21-day cycles, followed by the assigned blinded bevacizumab monotherapy."
+19588246,NCT02364999,Drug,Bevacizumab-EU,bevacizumab-EU: 15 mg/kg IV on Day 1 of a 21-day cycle for each of at least 4 and no more than six (6) 21-day cycles followed by the assigned blinded bevacizumab monotherapy.
+19588247,NCT02364999,Drug,Paclitaxel,Paclitaxel 200 mg/m2 via IV infusions on Day 1 of a 21-day cycle for each of at least 4 and no more than six (6) 21-day cycles.
+19588248,NCT02364999,Drug,Carboplatin,carboplatin AUC =6.0 via IV infusions on Day 1 of a 21-day cyclefor each of at least 4 and no more than six (6) 21-day cycles.
+19588281,NCT02366143,Drug,"Atezolizumab (MPDL3280A), an engineered anti-PD-L1 antibody",Atezolizumab was administered as IV infusion at a dose of 1200 milligrams (mg) on Day 1 of each 21-day cycle until loss of clinical benefit.
+19588282,NCT02366143,Drug,Bevacizumab,"Bevacizumab was administered as IV infusion at a dose of 15 milligrams per kilogram (mg/kg) on Day 1 of each 21-day cycle until progressive disease, unacceptable toxicity, or death."
+19588283,NCT02366143,Drug,Carboplatin,Carboplatin was administered at area under the concentration-time curve (AUC) 6 milligrams per milliliter per minute (mg/mL/min) on Day 1 of each 21-day cycle for 4 or 6 cycles or until loss of clinical benefit whichever occurs first.
+19588284,NCT02366143,Drug,Paclitaxel,Paclitaxel was administered as IV infusion at a dose of 200 milligrams per square meter (mg/m^2) on Day 1 of each 21-day cycle for 4 or 6 cycles or until loss of clinical benefit whichever occurs first.
+19588333,NCT02367781,Drug,"Atezolizumab (MPDL3280A), an engineered anti-PD-L1 antibody",Atezolizumab was administered as IV infusion at a dose of 1200 milligrams (mg) on Day 1 of each 21-day cycle. Atezolizumab was administered to participants who were randomized to Arm A (Atezolizumab + Nab-Paclitaxel + Carboplatin) and to participants in Arm B (Nab-Paclitaxel + Carboplatin) who cross over at progression.
+19588334,NCT02367781,Drug,Carboplatin,Carboplatin was administered at area under the concentration curve (AUC) 6 milligrams per milliliter per minute (mg/mL/min) on Day 1 of each 21-day cycle.
+19588335,NCT02367781,Drug,Nab-Paclitaxel,"Nab-paclitaxel was administered as IV infusion at a dose of 100 milligrams per square meter (mg/m^2) on Days 1, 8, and 15 of each 21-day cycle."
+19588336,NCT02367781,Drug,Pemetrexed,Switch maintenance to pemetrexed can be administered within 6 weeks of Day 1 of the last induction cycle.
+19588956,NCT02395172,Drug,Avelumab,"Participants received 10 milligrams per kilogram (mg/kg) of avelumab as a 1-hour intravenous infusion once every 2 weeks until confirmed disease progression, significant clinical deterioration, unacceptable toxicity, or any criterion for withdrawal from the study or Investigational Medicinal Product (IMP) as defined in the study protocol was fulfilled."
+19588957,NCT02395172,Drug,Docetaxel,"Participants received 75 mg per square meter (m^2) (per label) of docetaxel by intravenous infusion once every 3 weeks until confirmed disease progression, significant clinical deterioration, unacceptable toxicity, or any criterion for withdrawal from the study or Investigational Medicinal Product (IMP) as defined in the study protocol was fulfilled."
+19589621,NCT02421588,Drug,Lurbinectedin (PM01183),NA
+19589622,NCT02421588,Drug,Pegylated liposomal doxorubicin (PLD),NA
+19589623,NCT02421588,Drug,Topotecan,NA
+19590859,NCT02474355,Procedure,T790M+ Testing,"If a previous lab report is unavailable, the patient will need to have T790M+ testing."
+19590860,NCT02474355,Procedure,Baseline Visit Blood & Urine Testing,Blood count and standard chemistry testing to ensure patient meets inclusion/exclusion criteria
+19590861,NCT02474355,Procedure,Baseline ECG,ECG to ensure absence of any cardiac abnormality
+19590862,NCT02474355,Procedure,Visual Slit-Lamp Testing,Slit-lamp testing performed to ensure patients do not have any eye abnormalities or symptoms
+19590863,NCT02474355,Drug,AZD9291 Dosing,Patients to be provided with AZD9291 every 6 weeks (+/- 7 days)
+19592550,NCT02545075,Drug,Ipilimumab,NA
+19592551,NCT02545075,Drug,Dacarbazine,NA
+19718286,NCT02200614,Drug,"Darolutamide (Nubeqa, BAY1841788)","Darolutamide 600 mg (2 tablets of 300 mg) twice daily with food, equivalent to a total daily dose of 1200 mg."
+19718287,NCT02200614,Drug,Placebo,Matching placebo 2 tablets twice daily with food.
+19722164,NCT00806923,Drug,Cisplatin,"80mg/m2 iv on day 1 of each 3 week cycle, for a maximum of 6 cycles"
+19722165,NCT00806923,Drug,Gemcitabine,1250mg/m2 on days 1 and 8 of each 3 week cycle for a maximum of 6 cycles
+19722166,NCT00806923,Drug,Placebo,iv on day 1 of each 3 week cycle until disease progression
+19722167,NCT00806923,Drug,bevacizumab [Avastin],15mg/kg 1v on day 1 of each 3 week cycle until disease progression
+19722168,NCT00806923,Drug,bevacizumab [Avastin],7.5 mg/kg iv on day 1 of each 3 week cycle until disease progression
+19616132,NCT03296163,Drug,MB02 (Bevacizumab Biosimilar Drug),15 mg/kg IV every 3 weeks on Day 1
+19616133,NCT03296163,Drug,EU-approved Avastin®,15 mg/kg IV every 3 weeks on Day 1
+19616134,NCT03296163,Drug,Carboplatin,Carboplatin Area under the curve (AUC) 6 IV every 3 weeks on Day 1 for 6 cycles
+19616135,NCT03296163,Drug,Paclitaxel,Paclitaxel 200 mg/m2 IV every 3 weeks on Day 1 for 6 cycles
+19742217,NCT01011751,Drug,Cyproterone acetate,Cyproterone acetate tablet-in-capsule.
+19742218,NCT01011751,Drug,Medroxyprogesterone acetate,Medroxyprogesterone acetate tablet-in-capsule.
+19742219,NCT01011751,Drug,Venlafaxine,Venlafaxine capsule.
+19742220,NCT01011751,Drug,Leuprorelin,Leuprorelin injection.
+19742221,NCT01011751,Drug,Flutamide,Flutamide tablet
+19742222,NCT01011751,Drug,Placebo,"Cyproterone acetate, medroxyprogesterone acetate or venlafaxine placebo-matching capsule."
+19604683,NCT01721772,Biological,BMS-936558 (Nivolumab),NA
+19604684,NCT01721772,Biological,Placebo matching BMS-936558 (Nivolumab),NA
+19604685,NCT01721772,Drug,Dacarbazine,NA
+19604686,NCT01721772,Drug,Placebo matching Dacarbazine,NA
+19616562,NCT03329911,Drug,EU Avastin®,100 mg/4 mL
+19616563,NCT03329911,Drug,BAT1706,100 mg/4 mL
+19616564,NCT03329911,Drug,Paclitaxel,200 mg/m²
+19616565,NCT03329911,Drug,carboplatin,target area under the curve [AUC] 6 mg/mL•minute
+19751356,NCT01122121,Drug,Leuprorelin SR,Leuprorelin SR injection
+19751357,NCT01122121,Radiation,Radiotherapy,Radiotherapy 70 +/- 4 Gy
+19751358,NCT01122121,Drug,Flutamide,Flutamide tablets
+19609135,NCT02905266,Biological,Nivolumab,-Specified dose on specified days
+19609136,NCT02905266,Biological,Ipilimumab,-Specified dose on specified days
+19323732,NCT02106546,Drug,Carboplatin,Carboplatin administered intravenously over approximately 15 to 30 minutes at (AUC 6 mg/mL/min) immediately following paclitaxel infusion.
+19323733,NCT02106546,Drug,Veliparib,"Capsules taken orally twice a day, 12 hours apart."
+19323734,NCT02106546,Drug,Paclitaxel,Paclitaxel administered intravenously over 3 hours at a dose of 200 mg/m².
+19323735,NCT02106546,Drug,Placebo to veliparib,"Capsules taken orally twice a day, 12 hours apart."
+19785620,NCT00330759,Biological,Denosumab,120 milligrams by subcutaneous injection every 4 weeks
+19785621,NCT00330759,Drug,Zoledronic Acid,4 milligrams intravenous Zoledronic Acid over minimum 15 minutes every 4 weeks
+19632298,NCT00002717,Drug,cisplatin,NA
+19632299,NCT00002717,Drug,paclitaxel,NA
+19633534,NCT00003120,Drug,paclitaxel,135 mg/m2 IV every 28 days
+19634041,NCT00003322,Drug,cisplatin,NA
+19634042,NCT00003322,Drug,paclitaxel,NA
+19634043,NCT00003322,Procedure,quality-of-life assessment,NA
+19644516,NCT00129142,Drug,Toremifene Citrate,NA
+19651607,NCT00076388,Drug,Gefitinib,NA
+19651608,NCT00076388,Drug,Docetaxel,NA
+19653962,NCT00087711,Drug,pemetrexed,"500 mg/m2, IV q 21 days x 6 cycles"
+19653963,NCT00087711,Drug,gemcitabine,"1250 mg/m2, IV, day 1 and 8 q 21 days x 6 cycles"
+19653964,NCT00087711,Drug,cisplatin,"75 mg/m2, IV, q 21 days x 6 cycles"
+19654309,NCT00091663,Drug,Tarceva (erlotinib HCl),NA
+19655181,NCT00102375,Drug,Topotecan,NA
+19655186,NCT00102414,Drug,Gemcitabine,NA
+19655516,NCT00106691,Drug,Toremifene 20 mg,20 mg once a day
+19655517,NCT00106691,Drug,Placebo,"placebo tablet identically appearing to the toremifene 20 mg tablet, administered daily for 360 days."
+19671917,NCT00263822,Drug,erlotinib hydrochloride,NA
+19813762,NCT02367794,Drug,"Atezolizumab (MPDL3280A), an engineered anti-programmed death-ligand 1 (anti-PD-L1) antibody",Atezolizumab 1200 milligrams (mg) intravenous infusion (IV) on day 1 of each 21-day cycle.
+19813763,NCT02367794,Drug,Carboplatin,Carboplatin area under the concentration curve (AUC) 6 milligrams per milliliter per minute (mg/mL/min) on Day 1 of each 21-day cycle for 4 or 6 cycles.
+19813764,NCT02367794,Drug,Nab-Paclitaxel,"Nab-paclitaxel 100 milligrams per meter squared (mg/m^2) IV on Day 1, 8, and 15 of each 21-day cycle for 4 or 6 cycles."
+19813765,NCT02367794,Drug,Paclitaxel,Paclitaxel 200 mg/m^2 IV on Day 1 of each 21-day cycle for 4 or 6 cycles. Participants of Asian race/ethnicity will be administered paclitaxel 175 mg/m^2 IV.
+19675893,NCT00312013,Drug,Nadroparin,"Patients will received all standard anti-cancer treatments. Therapeutic doses of nadroparin will be administered, subcutaneous for 2 weeks followed by half therapeutic doses for 4 weeks. After 4 weeks of wash-out, subsequent 2 week periods of therapeutic doses will be given for a total of 6 cycles each separated by a 4 week wash out. The study treatment period ends at week 46 regardless of the number of cycles achieved."
+19681746,NCT00378690,Drug,leuprorelin acetate,LHRH antagonist
+19813311,NCT02663908,Drug,Degarelix,NA
+19813312,NCT02663908,Drug,Leuprolide,NA
+19686467,NCT00436839,Drug,Docetaxel,75mg/m² intravenously (day 1) every 21 days
+19686468,NCT00436839,Drug,Mitoxantrone,12mg/m² intravenously every 21 days
+19686469,NCT00436839,Drug,Prednisone,10mg orally given daily
+19220725,NCT02142738,Drug,Pembrolizumab,Pembrolizumab IV solution
+19220726,NCT02142738,Drug,Paclitaxel,Paclitaxel IV solution
+19220727,NCT02142738,Drug,Carboplatin,Carboplatin IV solution
+19220728,NCT02142738,Drug,Pemetrexed,Pemetrexed Lyophilized Powder for Infusion
+19220729,NCT02142738,Drug,Cisplatin,Cisplatin IV solution
+19220730,NCT02142738,Drug,Gemcitabine,Gemcitabine Lyophilized Powder for Infusion
+19826234,NCT01837251,Drug,Carboplatin,NA
+19826235,NCT01837251,Drug,PLD,NA
+19826236,NCT01837251,Biological,Bevacizumab,NA
+19231418,NCT03180307,Drug,OTL38,0.025 mg/kg of OTL38 in 250ml dextrose 5% in water (D5W) infused intravenously over 60 minutes
+19231419,NCT03180307,Device,near infrared camera imaging system,Infrared imaging used to excite OTL38 for fluorescence
+19231420,NCT03180307,Procedure,laparotomy,"primary surgical cytoreduction, interval debulking, or recurrent ovarian cancer surgery"
+19462232,NCT03273153,Drug,Cobimetinib,"Cobimetinib 60 mg tablets orally once daily on a 21 days on, 7 days off schedule."
+19462233,NCT03273153,Drug,Atezolizumab,Atezolizumab 840 mg as IV infusion once in every 2 weeks.
+19462234,NCT03273153,Drug,Pembrolizumab,Pembrolizumab 200 mg as IV infusion once in every 3 weeks.
+19496842,NCT00003644,Drug,carboplatin,NA
+19496843,NCT00003644,Drug,paclitaxel,NA
+19498675,NCT00011986,Drug,Paclitaxel,Given IV
+19498676,NCT00011986,Drug,Carboplatin,Given IV
+19498677,NCT00011986,Drug,Gemcitabine Hydrochloride,Given IV
+19498678,NCT00011986,Drug,Pegylated Liposomal Doxorubicin Hydrochloride,NA
+19498679,NCT00011986,Drug,Topotecan Hydrochloride,Given IV
+19498680,NCT00011986,Procedure,Therapeutic Conventional Surgery,Undergo surgery
+19498898,NCT00033540,Drug,capecitabine,"650 mg/m^2 twice daily (BID), by mouth (PO) at 12 hour intervals, Days 1-14, every 21 days"
+19498899,NCT00033540,Drug,gemcitabine hydrochloride,"1000 mg/m^2, intravenous (IV) over 100 minutes, Days 1,8, every 21 days"
+19499295,NCT00050960,Drug,bexarotene with carboplatin and paclitaxel,bexarotene capsules (400 mg/m^2/day) in combination with carboplatin IV (AUC 6) every 3 weeks and paclitaxel IV (200 mg/m^2) every 3 weeks. Subjects in this group also received an antilipid agent which was selected at the discretion of the investigator.
+19499296,NCT00050960,Drug,carboplatin and paclitaxel,carboplatin IV (AUC 6) every 3 weeks and paclitaxel IV (200 mg/m^2) every 3 weeks.
+19499431,NCT00055601,Drug,cisplatin,"Induction: 15 mg/m2 as a 60-minute infusion on days 1, 2, 3, 8, 9, 10, 15, 16, and 17; Consolidation: 15 mg/m2 as a 60-minute infusion on days 1, 2, 8, and 9; Adjuvant: 35 mg/m2 as a 60-minute infusion on days 1 and 8 of each 21-day cycle for 4 cycles."
+19499432,NCT00055601,Drug,fluorouracil,"Induction: 400 mg/m2 as a 24-hour infusion on days 1, 2, 3, 15, 16, and 17; Consolidation: 400 mg/m2 as a 24-hour infusion on days 1, 2, 3, 8, 9, and 10."
+19499433,NCT00055601,Drug,paclitaxel,"Induction: 50 mg/m2 as a 60-minute infusion on days 1, 8, and 15; Consolidation: 50 mg/m2 as a 60-minute infusion on days 1 and 8; Adjuvant: 50 mg/m2 as a 60-minute infusion on days 1 and 8 of each 21-day cycle for 4 cycles."
+19499434,NCT00055601,Radiation,radiation therapy,"Induction: External beam irradiation, 1.6 Gy, will be given to the pelvis in the first treatment followed by an interfraction period of at least 4-6 hours. During the second treatment, 1.5 Gy will be delivered to the whole bladder for the first five sessions (7.5 Gy) then to the tumor plus a margin for eight sessions (12. Gy). Consolidation: Consolidation therapy will start 7-14 days following a cystoscopic re-evaluation demonstrating a complete response to the induction therapy. 1.5 Gy (per fraction) will be given to the pelvis in two treatment fractions per day, with an interfraction period of at least 4-6 hours."
+19499435,NCT00055601,Drug,Gemcitabine,Adjuvant: 1000 mg/m2 over 30-60 minutes on days 1 and 8 of each 21-day cycle for 4 cycles.
+19499436,NCT00055601,Procedure,Radical cystectomy,Operable patients with pT1 or worse tumor response on re-evaluation following induction therapy will have radical cystectomy.
+19499442,NCT00056407,Drug,Dutasteride,"After successful completion of the placebo run-in phase, subjects who continue to meet eligibility requirements will be randomized into the double-blind phase of the study and issued a 6-month supply of study drug. Subjects will self-administer study drug once daily dosing of 0.5mg of dutasteride orally for up to 4 years."
+19499443,NCT00056407,Drug,Placebo,"After successful completion of the placebo run-in phase, subjects who continue to meet eligibility requirements will be randomized into the double-blind phase of the study and issued a 6-month supply of study drug. Subjects will self-administer study drug once daily orally for up to 4 years."
+19499722,NCT00065442,Biological,Sipuleucel-T,Each dose of sipuleucel-T contains a minimum of 50 million autologous CD54+ cells activated with a PAP-GM-CSF. A course of therapy consists of 3 complete doses given at approximately 2-week intervals.
+19499723,NCT00065442,Biological,APC-Placebo,Each dose of APC-Placebo contains approximately one-third of the quiescent APCs prepared from a single leukapheresis procedure. A course of therapy consists of 3 complete doses given at approximately 2-week intervals.
+19500627,NCT00089674,Drug,AMG 162,"60 mg (1.0mL) administered subcutaneously at Day 1, Months 6, 12, 18, 24, 30"
+19500628,NCT00089674,Drug,Placebo,"60 mg (1.0mL) administered subcutaneously at Day 1, Months 6, 12, 18, 24, 30"
+19500699,NCT00091572,Drug,Temozolomide,"oral capsule; 150 mg/m2/day PO (by mouth), on 7 consecutive days every 14 days (7 days on / 7 days off continuously); one cycle of temozolomide is defined as a 6-week period; treatment will continue until progression of the disease, unacceptable toxicity, subject refusal, or opinion of the treating physician that it is in the subject's best interest to stop."
+19500700,NCT00091572,Drug,Dacarbazine,"intravenous solution; dacarbazine 1000 mg/m2 IV (in the vein), on Day 1 +/- 3 days every 3 weeks; one cycle of dacarbazine is defined as a 3-week period; treatment will continue until progression of the disease, unacceptable toxicity, subject refusal, or opinion of the treating physician that it is in the subject's best interest to stop."
+19500774,NCT00094653,Drug,MDX-010 (anti-CTLA4) monoclonal antibody,"3mg/kg (intravenous [iv] infusion over 90 minutes), every 3 weeks for 4 doses"
+19500775,NCT00094653,Biological,MDX-1379 (gp100) Melanoma Peptide Vaccine,"2mL (2 subcutaneous injections of 2 mL each, 1 to each thigh), every 3 weeks for 4 doses."
+19500811,NCT00095199,Drug,Pemetrexed,Pemetrexed 500 mg/m^2 administered intravenously on Day 1 of 3 weeks cycle until disease progression or unacceptable toxicity for up to six (3-week) cycles.
+19500812,NCT00095199,Biological,Cetuximab,"Cetuximab 400/250 mg/m^2 (initial/weekly) administered intravenously on Days 1, 8, and 15 (3-week) cycles until disease progression or unacceptable toxicity."
+19500813,NCT00095199,Drug,Docetaxel,Docetaxel 75 mg/m^2 administered intravenously on Day 1 of 3 weeks cycle until disease progression or unacceptable toxicity for up to six (3-week) cycles.
+19501100,NCT00102804,Drug,Pemetrexed,"500 milligrams per square meter (mg/m^2), intravenous (IV) administration, every (q) 21 days, until disease progression"
+19501101,NCT00102804,Drug,Placebo,"IV administration, q 21 days"
+19501102,NCT00102804,Other,Best Supportive Care,"Treatment without a specific antineoplastic regimen, given with the intent to maximize quality of life, as judged by the treating physician."
+19501432,NCT00111007,Drug,"Sorafenib (Nexavar, BAY43-9006)","Sorafenib, 400 mg po (per os), 2 tablets (200 mg each) bid Study Days 2-19"
+19501433,NCT00111007,Drug,Carboplatin/Paclitaxel,Paclitaxel (225 mg/m^2 iv) and Carboplatin (AUC 6 iv) on Study Day 1
+19501434,NCT00111007,Drug,Placebo,"Placebo, 2 tablets bid Study Days 2-19"
+19501564,NCT00113607,Drug,Trabectedin,"Type=exact number, unit=mg/m2, number=1.1, form=solution, route=IV. Trabectedin will be administered over 3 hours every 3 weeks."
+19501565,NCT00113607,Drug,DOXIL,"Type=exact number, unit=mg/m2, number=30, 50, form=solution, route=IV. DOXIL will be administered over 90 minutes every 4 weeks when administered alone (monotherapy) and every 3 weeks when administered with trabectedin."
+19501566,NCT00113607,Drug,Dexamethasone,"Type=exact number, unit=mg, number=20, form=solution, route=IV. Dexamethasone or its equivalent will be administered over 30 minutes prior to the DOXIL infusion."
+19502482,NCT00148798,Drug,cetuximab + cisplatin + vinorelbine,cetuximab given as an intravenous (i.v.) infusion every week (400mg/m^2 initial dose and 250mg/m^2 subsequent doses) until progressive disease (PD) + cisplatin 80mg/m^2 i.v. infusion on day 1 of each 3-week cycle + vinorelbine 25mg/m^2 i.v. infusion on days 1 and 8 of each 3-week cycle.
+19502483,NCT00148798,Drug,cisplatin + vinorelbine,cisplatin 80mg/m^2 i.v. infusion on day 1 of each 3-week cycle + vinorelbine 25mg/m^2 i.v. infusion on days 1 and 8 of each 3-week cycle.
+19502887,NCT00172042,Drug,Zoledronic acid 4 mg,Zoledronic acid 4 mg in 5 mL concentrated solution prepared with 100 mL calcium free infusion solution (0.9 % sodium chloride or 5% glucose solution).
+19504201,NCT00234039,Drug,gemcitabine hydrochloride,NA
+19552850,NCT01285609,Drug,Ipilimumab,NA
+19552851,NCT01285609,Drug,Placebo,NA
+19552852,NCT01285609,Drug,Paclitaxel,NA
+19552853,NCT01285609,Drug,Carboplatin,NA
+19505609,NCT00286091,Biological,Denosumab,Administered by subcutaneous injection
+19505610,NCT00286091,Biological,Placebo,Same volume subcutaneous injection
+19507131,NCT00312377,Drug,Docetaxel,infusion
+19507132,NCT00312377,Drug,Vandetanib,oral
+19507436,NCT00321620,Drug,zoledronic acid,Q4W 4 mg zoledronic acid IV over minimum 15 minutes and 120 mg denosumab placebo SC
+19507437,NCT00321620,Biological,denosumab,Q4W 120 mg denosumab SC and 4 mg zoledronic acid placebo IV over a minimum of 15 minutes
+19507522,NCT00322452,Drug,Gefitinib,oral tablet
+19507523,NCT00322452,Drug,Carboplatin,IV
+19507524,NCT00322452,Drug,Paclitaxel,IV
+19507592,NCT00324155,Drug,Ipilimumab,"Intravenous solution; intravenous; 10mg/kg; one dose every 3 weeks for 10 weeks then one dose every 12 weeks starting at Week 24, until disease progression, unacceptable toxicity or withdrawal of consent~In Maintenance phase: Only Ipilimumab: 10mg/kg, every 12 weeks will be continued until disease progression"
+19507593,NCT00324155,Drug,Placebo,"Intravenous solution; intravenous; 0 mg; one dose every 3 weeks for 10 weeks then one dose every 12 weeks starting at Week 24; until disease progression, unacceptable toxicity or withdrawal of consent"
+19507594,NCT00324155,Drug,Dacarbazine,"Intravenous solution; intravenous; 850 mg/m^2; one dose every 3 weeks for 22 weeks, until disease progression, unacceptable toxicity or withdrawal of consent"
+19510083,NCT00373425,Drug,Erlotinib,150 mg tablet
+19510084,NCT00373425,Drug,Placebo,Placebo tablet
+19510780,NCT00390806,Drug,"HYCAMTIN, oral capsules",topotecan oral capsules 1.1 mg/m2
+19510781,NCT00390806,Radiation,Radiation,Whole brain radiation
+19511753,NCT00412971,Drug,Hexvix,"Single installation, TURB"
+19511754,NCT00412971,Other,Standard white light cystoscopy,NA
+19511937,NCT00417079,Drug,cabazitaxel (XRP6258) (RPR116258),25 mg/m^2 administered by intravenous (IV) route over 1 hour on day 1 of each 21-day cycle
+19511938,NCT00417079,Drug,mitoxantrone,12 mg/m^2 administered by intravenous (IV) route over 15-30 minutes on day 1 of each 21-day cycle
+19511939,NCT00417079,Drug,prednisone,10 mg daily administered by oral route
+19553689,NCT01307397,Drug,Vemurafenib,"Participants will receive continuous oral doses of vemurafenib 960 mg (four 240 mg tablets) twice daily in each 28-day treatment cycle until the development of progressive disease, unacceptable toxicity, consent withdrawal, protocol violations endangering participant's safety, death, or study termination by the Sponsor, whichever occurs first."
+19553728,NCT01308567,Drug,Cabazitaxel (XRP6258),Pharmaceutical form: Solution for injection; Route of administration: Intravenous
+19553729,NCT01308567,Drug,Docetaxel (XRP6976),Pharmaceutical form: Solution for injection'; Route of administration: Intravenous
+19553730,NCT01308567,Drug,Prednisone,Pharmaceutical form: Tablet; Route of administration: Oral
+19553731,NCT01308580,Drug,Cabazitaxel (XRP6258),Pharmaceutical form: Concentrate and solvent for solution for infusion~Route of administration: Intravenous
+19553732,NCT01308580,Drug,Prednisone (or Prednisolone),Pharmaceutical form: Tablet~Route of administration: Oral
+19513202,NCT00445601,Drug,gemcitabine hydrochloride,Given intravesically
+19513203,NCT00445601,Other,placebo,Given intravesically
+19513362,NCT00449033,Drug,"Sorafenib (Nexavar, BAY43-9006)","Multikinase inhibitor, Sorafenib 400 mg po bid; applied in combination with chemotherapy components: Gemcitabine 1250 mg/m^2 IV, Cisplatin 75 mg/m^2 IV"
+19513363,NCT00449033,Drug,Placebo,"Placebo 2 tablets po bid; applied in combination with chemotherapy components: Gemcitabine 1250 mg/m^2 IV, Cisplatin 75 mg/m^2 IV"
+19513364,NCT00449033,Drug,Gemcitabine,Chemotherapy component; Gemcitabine 1250 mg/m^2 IV
+19513365,NCT00449033,Drug,Cisplatin,Chemotherapy component; Cisplatin 75 mg/m^2 IV
+19513885,NCT00461591,Drug,Apaziquone,A single intravesical dose of Apaziquone 4mg in 40ml instilled into the bladder post-TURBT
+19513886,NCT00461591,Drug,Placebo,A single intravesical dose of placebo instilled into the bladder post-TURBT
+19513887,NCT00461591,Procedure,TURBT,TransUrethral Resection of the Bladder Tumor
+19515692,NCT00506155,Drug,Avastin,10 mg/kg by vein over 90 minutes
+19515693,NCT00506155,Drug,Cisplatin,70 mg/m^2 by vein over 4 hours
+19515694,NCT00506155,Drug,Doxorubicin,30 mg/m^2 by vein over 15 minutes
+19515695,NCT00506155,Drug,Methotrexate,30 mg/m^2 by vein over 30 minutes
+19515696,NCT00506155,Drug,Vinblastine Sulfate,3 mg/m^2 by vein over 30 minutes
+19516241,NCT00519285,Drug,Aflibercept,"25 mg/ml solution~6 mg/kg, 1-hour IV on Day 1 of each 3-Week cycle"
+19516242,NCT00519285,Drug,Placebo (for aflibercept),Sterile aqueous buffered solution identical to aflibercept~1-hour IV on Day 1 of each 3-Week cycle
+19516243,NCT00519285,Drug,Docetaxel,"Marketed formulation~75 mg/m², 1 hour IV on Day 1 of each 3-week cycle (immediately after Aflibercept or placebo)"
+19516244,NCT00519285,Drug,Prednisone or Prednisolone,Marketed formulation~5 mg twice daily PO from day 1 continuously
+19516768,NCT00532155,Drug,"Aflibercept (ziv-aflibercept, AVE0005, VEGF trap, ZALTRAP®)","6 mg/kg Aflibercept administered intravenously (IV) over 1 hour once on Day 1, every 3 weeks."
+19516769,NCT00532155,Drug,Placebo,"Matching placebo to Aflibercept administered intravenously (IV) over 1 hour once on Day 1, every 3 weeks."
+19516770,NCT00532155,Drug,Docetaxel (Taxotere®),"75 mg/m² docetaxel in 250 mL dextrose 5% or NaCl 0.9% administered intravenously (IV) over 1 hour, on Day 1 every 3 weeks."
+19516771,NCT00532155,Drug,Dexamethasone (pre- and post-medication for docetaxel),"As a pre- and post-medication for docetaxel, 8 mg dexamethasone was administered orally, the evening before Day 1, on Day 1 (early morning, 1 hour before docetaxel treatment, and evening) and on Day 2 (morning and evening)."
+19517141,NCT00540514,Drug,Albumin-bound paclitaxel,Administered by intravenous infusion.
+19517142,NCT00540514,Drug,Paclitaxel,Administered by intravenous infusion.
+19517143,NCT00540514,Drug,Carboplatin,"Administered by intravenous infusion. Dosing was based on the Calvert formula: carboplatin dose (mg) = (Target AUC) x (glomerular filtration rate [GFR] + 25). For the purposes of this protocol, the GFR is considered to be equivalent to creatinine clearance (calculated by the method of Cockcroft and Gault, 1976)."
+19517814,NCT00554229,Drug,ZD4054,ZD4054 10 mg oral tablet once daily
+19517815,NCT00554229,Drug,Placebo,Matching placebo oral tablet once daily
+19517891,NCT00556322,Drug,Alimta or Taxotere,500mg/m2 / 3 weeks (Alimta) or 75mg/m2 / 3 weeks (Taxotere)
+19517892,NCT00556322,Drug,erlotinib [Tarceva],150mg po daily
+19517911,NCT00556712,Drug,erlotinib [Tarceva],150mg po daily
+19517912,NCT00556712,Drug,Placebo,po daily
+19554196,NCT01322490,Biological,PROSTVAC-V,NA
+19554197,NCT01322490,Biological,PROSTVAC-F,NA
+19554198,NCT01322490,Drug,GM-CSF,NA
+19554199,NCT01322490,Other,GM-CSF Placebo,NA
+19554200,NCT01322490,Biological,Placebo,PROSTVAC V/F Placebo
+19522263,NCT00598806,Drug,Apaziquone,A single intravesical dose of Apaziquone 4mg in 40ml instilled into the bladder post-TURBT
+19522264,NCT00598806,Drug,Placebo,A single intravesical dose of placebo instilled into the bladder post-TURBT
+19522265,NCT00598806,Procedure,TURBT,TransUrethral Resection of the Bladder Tumor
+19523142,NCT00617669,Drug,Docetaxel,intravenous infusion given every three weeks
+19523143,NCT00617669,Drug,ZD4054,10 mg oral once daily dose
+19523144,NCT00617669,Drug,Placebo,placebo oral tablet once daily
+19523610,NCT00626431,Drug,Leuprolide acetate - Formulation A,"Leuprolide acetate was administered as 2 intramuscular (IM) injections of Formulation A, 45 mg 6 month depot, 24 weeks apart."
+19523611,NCT00626431,Drug,Leuprolide acetate - Formulation B,"Leuprolide acetate was administered as 2 intramuscular (IM) injections of Formulation B, 45 mg 6 month depot, 24 weeks apart."
+19524055,NCT00636168,Drug,ipilimumab,"IV solution, IV, 10 mg/kg, 4x every 21 days, then starting from Week 24 every 12 weeks until Week 156 (3 years), disease recurrence, unacceptable toxicity or patient withdrawal"
+19524056,NCT00636168,Drug,Placebo,"IV solution, IV, 10 mg/kg, 4x every 21 days then starting from Week 24 every 12 weeks until Week 156 (3 years), disease recurrence, unacceptable toxicity or patient withdrawal"
+19524148,NCT00638690,Drug,Placebo,Four tablets once daily until disease progression
+19524149,NCT00638690,Drug,Abiraterone acetate,Four 250-mg tablets once daily until disease progression
+19524150,NCT00638690,Drug,Prednisone/prednisolone,5 mg twice daily until disease progression
+19524698,NCT00656136,Drug,placebo,Patients receive placebo once daily
+19524699,NCT00656136,Drug,BIBW 2992,"Patients receive afatinib tablets once daily, and can reduce dose for adverse event management. Afatinib is given once daily, continuously until disease progression or unacceptable toxicity."
+19524944,NCT00661609,Drug,AZD4877,Intravenous (IV)25mg/weekly
+19526082,NCT00686959,Drug,Pemetrexed,infusion over 10 minutes
+19526083,NCT00686959,Drug,Cisplatin,infusion over 60 minutes with adequate anti-emetic treatment and appropriate hydration per local practice guidelines
+19526084,NCT00686959,Drug,Etoposide,administered per local practice guidelines over a minimum of 30 minutes
+19526085,NCT00686959,Drug,Vinorelbine,administered over 6-10 minutes infusion per local practice guidelines
+19526086,NCT00686959,Drug,Paclitaxel,administered as a 3-hour infusion
+19526087,NCT00686959,Drug,Carboplatin,administered per local practice guidelines over 30 minutes
+19526088,NCT00686959,Radiation,Thoracic Radiation Therapy (TRT),NA
+19526570,NCT00699751,Drug,"Radium-223 dichloride (Xofigo, BAY88-8223)","Radium-223 dichloride 50 kBq/kg b.w., 6 IV administrations separated by 4 weeks intervals."
+19526571,NCT00699751,Drug,Placebo,Isotonic saline 6 IV administrations separated by 4 weeks intervals.
+19526572,NCT00699751,Drug,Best standard of care (BSoC),"Best standard of care is regarded as the routine standard of care at each center, for example local EBRT (External Beam Radiation Therapy), corticosteroids, antiandrogens, estrogens (e.g., stilboestrol), estramustine or ketoconazole."
+19555281,NCT01351415,Drug,Bevacizumab,Participants will receive bevacizumab 7.5 or 15 milligrams per kilogram (mg/kg) intravenously.
+19555282,NCT01351415,Drug,Docetaxel,Docetaxel 60 or 75 milligram per meter square (mg/m^2) on Day 1 every 21 days.
+19555283,NCT01351415,Drug,Erlotinib,Erlotinib 150 mg daily taken on an empty stomach at least one hour before or two hours after the ingestion of food.
+19555284,NCT01351415,Drug,Pemetrexed,Pemetrexed 500 mg/m^2 IV over 10 minutes on Day 1 every 21 days.
+19555400,NCT01355497,Drug,GTx-024,subjects will be randomized to receive GTx-024 3mg softgel for the duration of the trial.
+19555401,NCT01355497,Drug,placebo,subject will receive matching placebo for the duration of the trial
+19528564,NCT00744497,Drug,Placebo,NA
+19528565,NCT00744497,Drug,Dasatinib,NA
+19528566,NCT00744497,Drug,Docetaxel,NA
+19528567,NCT00744497,Drug,Prednisone,NA
+19529586,NCT00769704,Biological,Talimogene laherparepvec,Up to 4 mL of 10⁸ pfu/mL/per intratumoral injection
+19529587,NCT00769704,Biological,GM-CSF,125 µg/m² subcutaneous injection
+19839706,NCT01964170,Drug,degarelix,subcutaneous
+19839707,NCT01964170,Drug,Goserelin,subcutaneous
+19530898,NCT00801242,Drug,Degarelix 240 mg / 80 mg,"For each treatment cycle, a starting dose of 240 mg of degarelix was administered on Day 0 as two 120 mg subcutaneous (s.c.) injections in the abdominal region. Thereafter, 6 doses of 80 mg degarelix were administered 28 days apart via single s.c. injections."
+19531056,NCT00805194,Drug,placebo plus docetaxel,placebo matching BIBF 1120 2 times daily along with standard therapy of docetaxel
+19531057,NCT00805194,Drug,BIBF 1120 plus docetaxel,BIBF 1120 2 times daily along with standard therapy of docetaxel
+19532928,NCT00833248,Drug,Degarelix,"The degarelix doses were administered into the abdominal wall every 28 days. A starting dose of 240 mg (40 mg/mL) degarelix was administered on Day 0 as two 3 mL subcutaneous (s.c.) injections. The second and third doses of 80 mg (20 mg/mL) degarelix were administered as single 4 mL s.c. injections on Days 28 and 56, respectively."
+19532929,NCT00833248,Drug,Goserelin,"Goserelin implants (3.6 mg) were inserted s.c. into the abdominal wall every 28 days. The first dose was administered on Day 3. The second and third doses of goserelin were administered on Days 31 and 59, respectively."
+19532930,NCT00833248,Drug,Bicalutamide,"On Day 0, participants began once-daily per-oral (p.o.) treatment with bicalutamide (50 mg) as anti-androgen flare protection; this treatment continued for 14 days after the first dose of goserelin."
+19533115,NCT00838201,Drug,Denosumab,"60 mg SC of Denosumab will be administered on study day 1, month 6, month 12, and month 18"
+19533995,NCT00861614,Drug,Ipilimumab,"5 mg/ml solution, Intravenous, 10 mg/kg, Every 3 weeks for up to 4 doses in the Induction Phase. Every 12 weeks in the Maintenance Phase, Up to 24 weeks in Induction, 48+ weeks in the Maintenance Phase, or until Treatment Stopping Criteria are met, withdrawal of consent, lost to follow-up, death, study closure"
+19533996,NCT00861614,Drug,Placebo,"Solution, Intravenous, 0 mg, Every 3 weeks for up to 4 doses in the Induction Phase. Every 12 weeks in the Maintenance Phase, up to 24 weeks in Induction, 48+ weeks in the Maintenance Phase, or until Treatment Stopping Criteria are met, withdrawal of consent, lost to follow-up, death, study closure"
+19534113,NCT00864253,Drug,ABI-007,"Patients who receive ABI-007 will be dosed intravenously over approximately 30 minutes without steroid pre-medication and without G-CSF prophylaxis (unless modified as described below). ABI-007 150 mg/m2 will be administered on Days 1, 8, and 15 every 4 weeks."
+19534114,NCT00864253,Drug,Dacarbazine,Patients who receive dacarbazine will be dosed intravenously at 1000 mg/m2 on Day 1 with steroid and antiemetic pre-medication. Treatment will be repeated every 21 days.
+19534992,NCT00887198,Drug,Abiraterone acetate,1000 mg per day (4 x 250-mg tablets) taken orally.
+19534993,NCT00887198,Drug,Placebo,4 placebo tablets per day taken orally.
+19534994,NCT00887198,Drug,Prednisone,5 mg tablet orally twice daily.
+19536355,NCT00925600,Biological,Denosumab,Prefilled syringe for subcutaneous (SC) injection administered at a dose of 60 mg
+19536356,NCT00925600,Biological,Placebo,Prefilled syringe for subcutaneous (SC) injection
+19537295,NCT00946920,Drug,Degarelix,"The degarelix doses were administered by subcutaneous (s.c.) injections into the abdominal wall. A starting dose of 240 mg degarelix was administered on Day 0. One month later a maintenance dose of 480 mg was administered. This was repeated after 4, 7, and 10 months (ie a total of 5 administrations)."
+19537296,NCT00946920,Drug,Goserelin acetate,"The goserelin doses were administered by subcutaneous (s.c.) implants into the abdominal wall. An initial dose of 3.6 mg goserelin was administered on Day 0. One month later a subsequent dose of 10.8 mg was administered and this was repeated after 4, 7, and 10 months (ie a total of 5 implants)."
+19538388,NCT00974311,Drug,Enzalutamide,"MDV3100, 160 mg orally per day"
+19538389,NCT00974311,Drug,Placebo,Placebo comparator
+19538572,NCT00978250,Drug,5-Fluoro-2'-Deoxycytidine (FdCyd) + Tetrahydrouridine (THU),"FdCyd, a fluoropyrimidine nucleoside analog, has a short (10-minute) half-life and is rapidly degraded in vivo by cytidine deaminase. However, co-administration with THU, an inhibitor of cytidine/deoxycytidine deaminase, has been shown to increase the area under the curve (AUC) of the parent compound more than 4-fold. Increased FdCyd exposure allows it to be taken up intracellularly and converted to its triphosphate, which is incorporated into deoxyribonucleic acid (DNA) and inhibits the action of the enzyme DNA methyltransferase (DNMT). Inhibition of DNMT, and in turn DNA methylation, can result in the re-expression of tumor suppressor genes."
+19539038,NCT00988208,Drug,Lenalidomide,25 mg lenalidomide orally once each day on Days 1-14
+19539039,NCT00988208,Drug,Docetaxel,75 mg/m2 intravenous docetaxel on Day 1
+19539040,NCT00988208,Drug,Prednisone,5 mg prednisone orally twice daily on each day of the treatment cycle
+19539041,NCT00988208,Drug,Placebo,Oral placebo once each day on Days 1-14 of the treatment cycle
+19539841,NCT01006980,Drug,Vemurafenib,960 mg (as 240 mg tables) orally twice daily
+19539842,NCT01006980,Drug,Dacarbazine,1000 mg/m2 intravenously every 3 weeks
+19540198,NCT01015118,Drug,Placebo,comparator to BIBF 1120
+19540199,NCT01015118,Drug,Paclitaxel,Paclitaxel (standard chemo-therapy)
+19540200,NCT01015118,Drug,BIBF 1120,comparison of BIBF 1120 in combination with chemotherapy and placebo in combination with chemotherapy (paclitaxel/carboplatin)
+19540201,NCT01015118,Drug,Carboplatin,Carboplatin (standard chemo-therapy)
+19540202,NCT01015118,Drug,Paclitaxel,Paclitaxel (standard chemo-therapy)
+19540203,NCT01015118,Drug,Carboplatin,Carboplatin (standard chemo-therapy)
+19540380,NCT01020448,Drug,Triptorelin (Decapeptyl®),One intramuscular injection of triptorelin (Decapeptyl®) 22.5mg performed once all baseline procedures and assessments have been completed.
+19541407,NCT01031420,Drug,single arm dose dense MVAC,"standard doses of methotrexate, vinblastine, adriamycin, and cisplatin given every 14 days."
+19543037,NCT01040780,Drug,Icotinib,125 mg three times daily (375 mg per day) by mouth
+19543038,NCT01040780,Drug,Gefitinib,250 mg every 24 hours by mouth
+19543642,NCT01057810,Drug,Ipilimumab,"5 mg/ml solution, Intravenous, 10 mg/kg, Every 3 weeks for up to 4 doses in the Induction Phase. Every 12 weeks in the Maintenance Phase. Up to 24 weeks in the Induction Phase. Treatment in the Maintenance Phase continues until total treatment period has reached three years,Treatment Stopping Criteria are met, withdrawal of consent, or study closure"
+19543643,NCT01057810,Drug,Placebo,"Solution, Intravenous, 0 mg, Every 3 weeks for up to 4 doses in the Induction Phase. Every 12 weeks in the Maintenance Phase. Up to 24 weeks in the Induction Phase. Treatment in the Maintenance Phase continues until total treatment period has reached three years,Treatment Stopping Criteria are met, withdrawal of consent, or study closure"
+19248638,NCT01578655,Drug,cabazitaxel,"Cabazitaxel (25mg/m² IV) is administered on day 1 of each 21-day cycle until disease progression, unacceptable toxicity, or completion of 10 cycles"
+19248639,NCT01578655,Drug,prednisone,"Prednisone (10 mg PO) is administered daily until disease progression, unacceptable toxicity, or completion of 10 cycles"
+19248640,NCT01578655,Drug,custirsen sodium,"Custirsen is administered as 3 loading doses (640 mg IV each) within 9 days, followed by weekly custirsen (640 mg IV) during each 21-day cycle until disease progression, unacceptable toxicity, or completion of 10 cycles"
+19249782,NCT01204749,Drug,AMG 386,Weekly Intravenous (IV) AMG 386 15 mg/kg
+19249783,NCT01204749,Drug,AMG 386 Placebo,Weekly Intravenous (IV) placebo 15 mg/kg
+19249784,NCT01204749,Drug,Paclitaxel,Paclitaxel 80 mg/m2 intravenous (IV) weekly (3 on/1 off)
+19249785,NCT01204749,Drug,Paclitaxel,Paclitaxel 80 mg/m2 intravenous (IV) weekly (3 on/1 off)
+19544541,NCT01085136,Drug,Investigator´s choice of chemotherapy,BIBW 2992 in a medium dose in combination with Paclitaxel to explore safety and efficacy versus investigator´s choice of chemotherapy
+19544542,NCT01085136,Drug,BIBW 2992,BIBW 2992 will be given in a medium dose in combination with Paclitaxel to explore safety and efficacy versus investigator´s choice of chemotherapy
+19545315,NCT01106040,Drug,Lymphoseek,The total volume of Lymphoseek injection will be between 0.1 - 1.0 mL.
+19548369,NCT01168973,Biological,Ramucirumab,"10 milligrams per kilogram (mg/kg) administered intravenously (IV) on Day 1 of 21-day cycle until disease progression, unacceptable toxicity, or another withdrawal criterion is met"
+19548370,NCT01168973,Drug,Placebo (for Ramucirumab),"Administered IV on Day 1 of 21-day cycle until disease progression, unacceptable toxicity, or another withdrawal criterion is met"
+19548371,NCT01168973,Drug,Docetaxel,"75 milligrams per square meter (mg/m^2) (60 mg/m^2 for the countries of Korea and Taiwan only with protocol amendment dated 22 May 2012) administered IV on Day 1 of 21-day cycle until disease progression, unacceptable toxicity, or another withdrawal criterion is met"
+19548966,NCT01183858,Drug,Erlotinib [Tarceva],Single daily oral dose
+19549346,NCT01193244,Drug,Orteronel,Orteronel will be administered orally twice a day continuously throughout the study. Patients will also receive concomitant gonadotropin-releasing hormone (GnRH) analogue therapy unless they have previously undergone orchiectomy and have a testosterone concentration of <50 ng/dL.
+19549347,NCT01193244,Drug,Placebo,"Placebo will be administered orally twice a day continuously throughout the study. Additionally, all patients will receive concomitant gonadotropin-releasing hormone (GnRH) analogue therapy unless they have previously undergone orchiectomy and a testosterone concentration of <50 ng/dL."
+19549348,NCT01193244,Drug,Prednisone,Prednisone will be administered orally twice a day continuously throughout the study. Patients will also receive concomitant gonadotropin-releasing hormone (GnRH) analogue therapy unless they have previously undergone orchiectomy and have a testosterone concentration of <50 ng/dL.
+19549349,NCT01193257,Drug,Orteronel,Orteronel tablets
+19549350,NCT01193257,Drug,Prednisone,Prednisone tablets
+19549351,NCT01193257,Drug,Orteronel Placebo,Orteronel placebo-matching tablets
+19253455,NCT00382811,Drug,phenoxodiol,400mg phenoxodiol three times daily in 28 day cycles.
+19253456,NCT00382811,Drug,carboplatin,AUC=2 weekly in 28 day cycles
+19253457,NCT00382811,Drug,placebo,every 8 hours daily in 28 day cycles
+19550103,NCT01212991,Drug,Enzalutamide,"Participants received enzalutamide 160 mg, administered as four 40-mg capsules, once per day by mouth. Study drug treatment continued until disease progression (evidence of radiographic progression, a skeletal-related event, or clinical progression) and the initiation of a cytotoxic chemotherapy or an investigational agent, unacceptable toxicity, or withdrawal."
+19550104,NCT01212991,Drug,Placebo,"Participants received placebo, administered as four capsules, once per day by mouth. Study drug treatment continued until disease progression (evidence of radiographic progression, a skeletal-related event, or clinical progression) and the initiation of a cytotoxic chemotherapy or an investigational agent, unacceptable toxicity, or withdrawal."
+19550739,NCT01227889,Drug,GSK2118436,150 mg twice daily
+19550740,NCT01227889,Drug,Dacarbazine (DTIC),"Intravenous (IV), 1000 mg/m2 every 3 weeks until initial progression"
+19551174,NCT01239732,Drug,Paclitaxel,"175 mg/m^2 on Day 1 every 3 weeks or at a dose of 80 mg/m^2 every week for a minimum of 4 cycles and not more than 8 cycles or until disease progression or unacceptable toxicity, whichever occurs first"
+19551175,NCT01239732,Drug,Bevacizumab,"15 mg/kg intravenously on Day 1 of every cycle for up to 36 cycles of 3 weeks each or until disease progression or unacceptable toxicity, whichever occurs first"
+19551176,NCT01239732,Drug,Carboplatin,"AUC 5-6 mg/ml/min on Day 1 every 3 weeks for a minimum of 4 cycles and not more than 8 cycles or until disease progression or unacceptable toxicity, whichever occurs first"
+19551362,NCT01245062,Drug,GSK1120212,MEK inhibitor
+19551363,NCT01245062,Drug,Chemotherapy,Investigator Choice of DTIC or paclitaxel

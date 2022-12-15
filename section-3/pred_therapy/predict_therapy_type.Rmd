@@ -1,0 +1,287 @@
+---
+title: "Text Prediction with Clinical Trials Data: Mono vs. Combination Therapy"
+output:
+  html_document:
+    theme: cosmo
+    highlight: zenburn
+    css: "css/note-style.css"
+---
+
+```{r, include=FALSE, message=FALSE}
+source("funs/funs.R")
+
+cnlp_init_udpipe()
+```
+
+## Load The Datasets
+
+We selected a set of 144 clinical trials for bladder cancer treatments. Each
+trial was hand coded according to whether it was a monotherapy or combination
+therapy treatment, whether the endpoint conditions were met or not, and the
+line of treatment. None of these features are explicitly indicated in the
+clinical trials database. In this notebook we will focus on building models to
+predict whether a trial is a monotherapy or combination therapy based on the
+fields that are available in the database.
+
+To start, we will load in our hand-coded data of the clinical trials, which
+includes the NCD ID and our labels. We'll also include a flag that randomly
+assigns each trial to a training or validation set.
+
+```{r}
+set.seed(1L)
+bladder <- read_csv("input/ca_pool.csv") |>
+  select(nct_id, official_title, endpoint_met, type_of_therapy,
+         line_of_therapy, description,) |>
+  mutate(bin = if_else(runif(n()) <= 0.66, "train", "valid")) |>
+  filter(!duplicated(nct_id))
+
+bladder
+```
+
+To build our model, we will also load several tables of data from the clinical
+trials database. To save time, we have taken a subset of the tables consisting
+of only those records connected to our trials.
+
+```{r, message=FALSE}
+design_groups <- read_csv("input/design_groups.txt")
+design_gint <- read_csv("input/design_group_interventions.txt")
+interventions <- read_csv("input/interventions.txt")
+```
+
+We'll discuss the content of each table as they are used in the code below.
+
+## Predicting Line of Therapy with Penalized Regression
+
+The clinical trials database contains a table describing each of the design
+arms in the trial. Each contains (a subset of) a title, a description, and 
+a group type label. For our text-based prediction model, we'll start by 
+collapsing all of these fields across each arm of the trial into a single
+text field describing the trial.
+
+```{r}
+dg <- design_groups |>
+  mutate(description = if_else(is.na(description), "", description)) |>
+  mutate(title = if_else(is.na(title), "", title)) |>
+  mutate(group_type = if_else(is.na(group_type), "", group_type)) |>
+  mutate(design = paste(group_type, title, description, by = " ")) |>
+  group_by(nct_id) |>
+  summarize(design = paste(design, collapse = " ")) |>
+  select(design, nct_id)
+
+dg
+```
+
+Next, another table describes all of the interventions in each trial, with one
+intervention per row. The interventions contain an intervention type and a 
+description. As above, we'll collapse all of this information into a single
+text field.
+
+```{r}
+inter <- interventions |>
+  mutate(intervention_type = if_else(is.na(intervention_type), "", intervention_type)) |>
+  mutate(name = if_else(is.na(name), "", name)) |>
+  mutate(inter = paste(intervention_type, name, by = " ")) |>
+  group_by(nct_id) |>
+  summarize(inter = paste(inter, collapse = " ")) |>
+  select(inter, nct_id)
+
+inter
+```
+
+Finally, we will take the design information and intervention information and
+join it back into our main `bladder` dataset. Then, we'll create the final 
+text field by pasting together the design description, the intervention
+description, the trial's title, and the trial's description.
+
+```{r}
+bladder_tomodel <- bladder |>
+  left_join(dg, by = "nct_id") |>
+  left_join(inter, by = "nct_id") |>
+  mutate(design = if_else(is.na(design), "", design)) |>
+  mutate(inter = if_else(is.na(inter), "", inter)) |>
+  mutate(text = paste0(official_title, description, design, inter)) |>
+  select(nct_id, text, type_of_therapy, bin)
+
+bladder_tomodel
+```
+
+Now that we have our data put together, we will run a natural language
+processing annotation that splits our data into individual tokens.
+
+```{r}
+anno <- cnlp_annotate(bladder_tomodel, doc_name = "nct_id", verbose = 25L)$token
+anno
+```
+
+With the data split into tokens and lemmas, the next step is to create a term
+frequency matrix. We'll build a matrix by counting the lemmas that are not 
+proper nouns. The annotation made a few mistakes regarding the detection of
+proper nouns, so we'll add a manual filter to remove other drug names (these
+are unlikely to generalize as predictions on the validation set).
+
+```{r}
+X <- anno |>
+  filter(upos != "PROPN") |>
+  mutate(lemma = stri_trans_tolower(lemma)) |>
+  filter(!(lemma %in% c("docetaxel", "carboplatin", "bevacizumab"))) |>
+  cnlp_utils_tf()
+y <- bladder_tomodel$type_of_therapy
+train_id <- bladder_tomodel$bin == "train"
+```
+
+Now with the data matrix built, we can run an elastic net model using the
+**glmnet** package. The model fits a logistic regression model with a complexity
+penalty on the size of the model coefficients that avoids over-fitting even in
+the presence of a large number of variables. The function uses cross-validation
+to select the best tuning parameter.
+
+```{r}
+set.seed(42L)
+model <- cv.glmnet(X[train_id,], y[train_id], family = "binomial", alpha = 0.4)
+plot(model)
+```
+
+Let's look at the coefficients from the model selected by the elastic net
+function. The model puts a zero weight on most terms; we need only look at the
+terms that have a non-zero weight. We see that all of the selected terms have a 
+negative sign (in other words, their presence is correlated with combination
+therapies). Also, most of these terms seem like reasonable indicators of a 
+combination therapy.
+
+```{r}
+beta <- coef(model)
+beta <- beta[apply(abs(beta), 1, sum) != 0,,drop=FALSE]
+beta <- beta[c(1L, order(beta[-1]) + 1L),,drop=FALSE]
+beta
+```
+
+Let's evaluate how well the model performs. The overall accuracy rate is not
+bad (the data are balanced between monotherapy and combination therapies).
+
+```{r}
+pred <- predict(model, newx = X, type = "class")
+tapply(y == pred, bladder_tomodel$bin, mean)
+```
+
+A confusion matrix shows that it is more common to incorrectly predict a 
+combination therapy that should be a monotherapy than the other way around.
+
+```{r}
+table(pred, y, bladder_tomodel$bin)
+```
+
+Finally, a ROC curve shows that our model is fairly good at making predictions
+when the estimated probability is at one of the extreme values (corresponding
+to have none or many of the negative terms discovered above).
+
+```{r}
+pred_cont <- predict(
+  model, newx = X[bladder_tomodel$bin == "valid",], type = "response"
+)
+pred_obj <- prediction(
+  pred_cont, as.numeric(y[bladder_tomodel$bin == "valid"] == "Monotherapy")
+)
+perf <- performance(pred_obj, measure = "tpr", x.measure = "fpr")
+tibble(fpr = perf@x.values[[1]], tpr = perf@y.values[[1]]) |>
+  ggplot(aes(fpr, tpr)) +
+    geom_point() +
+    geom_line() +
+    geom_abline(linetype = "dotted", color = "red") +
+    labs(x = "False positive rate", y = "True positive rate")
+```
+
+## Predicting Line of Therapy with Expert Rules
+
+As an alternative to the penalized estimation approach above, we can also try
+to build an expert system with hand-constructed rules to predict whether a trial
+is a monotherapy or combination therapy. The benefit of the expert rules is that
+we do not need to collapse all of the text fields into a single field and can
+instead build a model based on a complex combination of the different tables.
+The downside is that it is much more difficult for our hand-constructed expert
+rules to detect smaller, subtle patterns that may be predictive when aggregated.
+
+Our general idea is to try to count the number of interventions present in the
+experimental arm of the trial. To start, we will look at the interventions table
+and filter to only include "real" interventions (biological, drugs, and
+radiation). Then, we'll assume that each row is at a minimum an individual
+treatment; words such as "and", "plus", and "with" indicate a second treatment,
+as do common acronyms (MVAC and DVAC). We know that this will undercount the
+number of drugs when there are more than two, but since we only care about 
+the difference between one treatement and more than one treatement, this will
+not effect the model.
+
+```{r}
+number_of_inters <- interventions |>
+  filter(intervention_type %in% c("Biological", "Drug", "Radiation")) |>
+  mutate(name = stri_trans_tolower(name)) |>
+  mutate(num_inter = stri_detect(name, fixed = "with") +
+                     stri_detect(name, fixed = "and") +
+                     stri_detect(name, fixed = "+") +
+                     stri_detect(name, fixed = "plus") +
+                     stri_detect(name, fixed = "mvac") +
+                     stri_detect(name, fixed = "dvac") +
+                     1L) |>
+  select(id, nct_id, num_inter)
+
+number_of_inters
+```
+
+Now, we can join the interventions table to the design table to associate each
+intervention with an arm of the trial. We filter the experimental arm and then
+summarize to find the estimated number of treatements in each experimental
+group.
+
+```{r}
+number_of_inters_sum <- number_of_inters |>
+  inner_join(
+    select(design_gint, -id), by = c("id" = "intervention_id", "nct_id")
+  ) |>
+  inner_join(design_groups, by = c("design_group_id" = "id", "nct_id"),
+             suffix = c("_intervention", "_design")) |>
+  filter(group_type == "Experimental") |>
+  group_by(nct_id, design_group_id) |>
+  summarize(num_inter = sum(num_inter)) |>
+  ungroup()
+
+number_of_inters_sum
+```
+
+Now, we'll combine the data from above with our hand-labeled data and categorize
+a treatement as Monotherapy if it has only a single intervention in the
+experimental arm and as a combination therapy otherwise.
+
+```{r}
+expert_rules <- number_of_inters_sum |>
+  inner_join(select(bladder, nct_id, type_of_therapy, bin),  by = "nct_id") |>
+  mutate(pred = if_else(num_inter == 1, "Monotherapy", "Combination"))
+
+expert_rules
+```
+
+Let's see how well this works. In selecting the keywords above, we used on the
+training data. We'll show the results by the train/validation split to be able
+to compare to the results above. Just based on accuracy, we see that the expert
+rules outperform the penalized regression approach:
+
+```{r}
+tapply(expert_rules$type_of_therapy == expert_rules$pred, expert_rules$bin, mean)
+```
+
+We also see from a confusion matrix that there is not particular pattern to the
+mis-predicted labels.
+
+```{r}
+table(y = expert_rules$type_of_therapy, pred = expert_rules$pred, expert_rules$bin)
+```
+
+As a final step, one can look at the mis-predicted trials and try to understand
+why our expert rules model made a mistake (a web search for the NCT ID will
+usually pull of the results on clinical trials website as the first hit).
+
+```{r}
+expert_rules |>
+  filter(type_of_therapy != pred) |>
+  arrange(type_of_therapy)
+```
+
+

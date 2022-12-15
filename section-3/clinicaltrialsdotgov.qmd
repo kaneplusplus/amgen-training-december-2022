@@ -1,0 +1,225 @@
+---
+title: "Databases"
+output:
+  html_document:
+    code_folding: true
+---
+
+# What are we doing for this section?
+
+1. Set up a [clinicaltrials.gov](https://clinicaltrials.gov) database using {duckdb}.
+2. Use the database to query trials, look at how some drug programs evolve over time,
+and visualize their evolution.
+
+# How do we get the data?
+
+Data are downloaded from [clinical trials download site](https://aact.ctti-clinicaltrials.org/pipe_files).
+
+```{r eval = FALSE}
+library(ctrialsgov) # devtools::install_github("presagia-analytics/ctrialsgov")
+
+# Only do this when you need a new snapshot!
+ctgov_get_latest_snapshot()
+
+```
+
+# How do we load the database?
+
+```{r}
+library(ctrialsgov) # devtools::install_github("presagia-analytics/ctrialsgov")
+library(DBI)
+library(duckdb)
+library(dplyr)
+library(dbplyr)
+
+con = dbConnect(duckdb("ctgov.duckdb", read_only = TRUE))
+```
+
+# What is con? What's in the database?
+
+```{r}
+con
+dbListTables(con)
+```
+
+# How do we get tables in the database?
+
+```{r}
+studies = tbl(con, "studies")
+```
+
+# How many studies do we have?
+
+```{r}
+nrow(studies)
+
+studies |> 
+  summarize(n = n())
+
+studies |>
+  select(nct_id) |>
+  distinct() |>
+  summarize(n = n())
+```
+
+```{r}
+tbl(con, "outcome_analyses")
+```
+
+# What are the most frequent conditions?
+
+```{r}
+conditions = tbl(con, "conditions")
+
+cc = conditions |>
+  group_by(name) |>
+  summarize(n = n()) |>
+  arrange(desc(n))
+
+library(ggplot2)
+
+cct = cc |>
+  head(20) |>
+  collect()
+
+ggplot(cc |> head(10), aes(x = name, y = n)) +
+  geom_col()
+```
+
+# Who is funding the studies?
+
+```{r}
+sponsors = tbl(con, "sponsors")
+```
+
+# How do we disconnect and reconnect?
+
+```{r}
+dbDisconnect(con)
+gc()
+sponsors |> summarize(n = n())
+
+con = dbConnect(duckdb("ctgov.duckdb", read_only = TRUE))
+sponsors = tbl(con, "sponsors")
+sponsors |> 
+  filter(lead_or_collaborator == "lead") |>
+  group_by(agency_class) |>
+  summarize(n = n()) |>
+  arrange(desc(n))
+```
+
+# {dbplyr} creates SQL code
+
+```{r}
+sponsors |>
+  summarize(n = n()) |>
+  show_query()
+
+dbGetQuery(con, "SELECT COUNT(*) AS n FROM sponsors")
+```
+
+# Industry studies summaries with lead sponsor
+
+```{r}
+has_repeat = function(tab, var = "nct_id") {
+  sum_distinct = x |> 
+    select(!!var) |>
+    distinct() |> 
+    summarize(n = n())
+  
+  sum_ = x |> 
+    select(!!var) |>
+    summarize(n = n())
+  
+  collect(sum_distinct)$n != collect(sum_)$n
+}
+
+has_repeat(studies)
+
+sponsors |> 
+  filter(lead_or_collaborator == "lead") |>
+  filter(agency_class == "INDUSTRY") |>
+  has_repeat()
+
+sws = inner_join(
+  studies, 
+  sponsors |> 
+    filter(lead_or_collaborator == "lead") |>
+    select(nct_id, agency_class, name)  |> 
+    filter(agency_class == "INDUSTRY"),
+  by = "nct_id"
+)
+```
+
+# How would I find non-small cell lung cancer studies in sws?
+
+```{r}
+sws |>
+  filter(grepl("non-small", brief_title, ignore.case = TRUE)) |>
+  select(nct_id, brief_title) 
+
+sws |>
+  filter(sql("brief_title ilike '%non-small%'")) |>
+  show_query()
+
+sws |>
+  filter(grepl("(non-small|nsclc)", brief_title, ignore.case = TRUE)) |>
+  select(brief_title) 
+
+# Is it faster?
+
+system.time(
+  sws |>
+    collect() |>
+    filter(grepl("non-small", brief_title, ignore.case = TRUE)) |>
+    select(nct_id, brief_title)
+)
+
+system.time(
+  sws |>
+    filter(sql("brief_title ilike '%non-small%'")) |>
+    select(nct_id, brief_title) |>
+    collect()
+)
+
+sws |>
+  filter(sql("brief_title ilike '%non-small%' OR brief_title ilike '%nonsmall%'"))
+
+sws |>
+  filter(sql("brief_title ilike '%non-small%' AND brief_title ilike '%nsclc%'"))
+```
+
+## Querying keywords
+
+```{r}
+query_kwds <- function(tbl, kwds, column, ignore_case = TRUE, match_all = FALSE) {
+  kwds <- paste0("%", kwds, "%") |>
+    gsub("'", "''", x = _)
+  if (ignore_case) {
+    like <- " ilike "
+  } else{
+    like <- " like "
+  }
+  query <- paste(
+    paste0(column, like, "'", kwds, "'"),
+    collapse = ifelse(match_all, " AND ", " OR ")
+  )
+
+  filter(tbl, sql(query))
+}
+
+sws |>
+  query_kwds(c("non-small cell", "nsclc"), "brief_title") |>
+  show_query()
+```
+
+# Predicting oncology trials mono vs. combo therapy
+
+Taylor's example 
+
+# Unsolicited advice
+
+1. Make sure your data are big enough to justify a database - you are giving up nesting and ad-hoc summaries. If you just want a place to keep datasets use s3 or a shared drive.
+1. If the data aren't too big then call `collect()`.
+1. If the data are too big then create the query to get the data you need and then call `collect()`.
+1. duckdb is good for single-session reproducible analyses but it is not a substitute for MySQL, PostgreSQL, etc.

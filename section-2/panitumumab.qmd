@@ -35,10 +35,6 @@ fl = list(
 vs = rnorm(10)
 
 for (i in seq_along(fl)) {
-  fl[[i]](vs)
-}
-
-for (i in seq_along(fl)) {
   print(fl[[i]](vs))
 }
 
@@ -86,7 +82,11 @@ left_join(
   tibble(c1 = c("a", "b", "c"), c2 = rnorm(3)),
   tibble(c1 = c("a", "d", "c"), c3 = rnorm(3)),
   by = "c1"
-)
+) |> print()
+
+
+any(duplicated(dl$adsl$SUBJID))
+any(duplicated(dl$biomark$SUBJID))
 
 demo = left_join(dl$adsl, dl$biomark, by = "SUBJID")
 demo$arm = paste(demo$TRT, demo$BMMTR1, sep = ", ")
@@ -158,13 +158,16 @@ ae |>
 ```{r}
 library(forcats)
 
-ae |>
-  mutate(AEPT = fct_lump_prop(AEPT, prop = 0.001)) |>
-  group_by(AEPT) |>
+# Get the ranked adverse events.
+ranked_ae <- ae |>
+  mutate(aept = fct_lump_prop(AEPT, prop = 0.001)) |>
+  group_by(aept) |>
   summarize(n = n()) |>
   arrange(desc(n)) |>
-  mutate(aept = factor(AEPT, levels = AEPT)) |>
-  ggplot(aes(x = aept, y = n)) +
+  mutate(aept = factor(aept, levels = aept))
+
+# Plot the ranked adverse events.
+ggplot(ranked_ae, aes(x = aept, y = n)) +
     geom_col() +
     theme_bw() +
     theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
@@ -270,6 +273,7 @@ table_to_tibble = function(x) {
   ret
 }
 
+# Create ae severity tables
 ae_counts = ae |>
   select(AEPT, AESEVCD) |>
   group_by(AEPT) |>
@@ -304,7 +308,7 @@ ae_counts_tt = ae_counts |>
   mutate(name = gsub("sev", "", name))
 
 # Show the 10 most prevalent.
-ggplot(ae_counts_tt |> head(10), aes(x = name, y = value)) +
+ggplot(ae_counts_tt |> head(12), aes(x = name, y = value)) +
   geom_col() + 
   theme_bw() +
   facet_wrap("AEPT") +
