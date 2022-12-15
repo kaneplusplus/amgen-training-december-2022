@@ -5,7 +5,7 @@ output:
     code_folding: true
 ------
 
-# Why do write shiny apps?
+# Why do we write shiny apps?
 
 # Unsolicited advice
 

@@ -8,8 +8,7 @@ output:
 # What are we doing for this section?
 
 1. Set up a [clinicaltrials.gov](https://clinicaltrials.gov) database using {duckdb}.
-2. Use the database to query trials, look at how some drug programs evolve over time,
-and visualize their evolution.
+2. Use the database to query trials, look at how some drug programs evolve over time, and visualize their evolution.
 
 # How do we get the data?
 
@@ -46,6 +45,7 @@ dbListTables(con)
 
 ```{r}
 studies = tbl(con, "studies")
+studies
 ```
 
 # How many studies do we have?
@@ -69,6 +69,7 @@ tbl(con, "outcome_analyses")
 # What are the most frequent conditions?
 
 ```{r}
+library(ggplot2)
 conditions = tbl(con, "conditions")
 
 cc = conditions |>
@@ -84,12 +85,20 @@ cct = cc |>
 
 ggplot(cc |> head(10), aes(x = name, y = n)) +
   geom_col()
+
+ggplot(cc |> head(10) |> collect(), aes(x = name, y = n)) +
+  geom_col()
+
 ```
 
 # Who is funding the studies?
 
 ```{r}
 sponsors = tbl(con, "sponsors")
+sponsors |>
+  filter(name == "Amgen") |>
+  group_by(lead_or_collaborator) |>
+  summarize(n = n())
 ```
 
 # How do we disconnect and reconnect?
@@ -122,12 +131,12 @@ dbGetQuery(con, "SELECT COUNT(*) AS n FROM sponsors")
 
 ```{r}
 has_repeat = function(tab, var = "nct_id") {
-  sum_distinct = x |> 
+  sum_distinct = tab |> 
     select(!!var) |>
     distinct() |> 
     summarize(n = n())
   
-  sum_ = x |> 
+  sum_ = tab |> 
     select(!!var) |>
     summarize(n = n())
   
@@ -144,9 +153,9 @@ sponsors |>
 sws = inner_join(
   studies, 
   sponsors |> 
-    filter(lead_or_collaborator == "lead") |>
-    select(nct_id, agency_class, name)  |> 
-    filter(agency_class == "INDUSTRY"),
+    filter(lead_or_collaborator == "lead",
+           agency_class == "INDUSTRY") |>
+    select(nct_id, agency_class, name),
   by = "nct_id"
 )
 ```
@@ -156,7 +165,8 @@ sws = inner_join(
 ```{r}
 sws |>
   filter(grepl("non-small", brief_title, ignore.case = TRUE)) |>
-  select(nct_id, brief_title) 
+  select(nct_id, brief_title) |>
+  show_query()
 
 sws |>
   filter(sql("brief_title ilike '%non-small%'")) |>
@@ -193,8 +203,8 @@ sws |>
 
 ```{r}
 query_kwds <- function(tbl, kwds, column, ignore_case = TRUE, match_all = FALSE) {
-  kwds <- paste0("%", kwds, "%") |>
-    gsub("'", "''", x = _)
+  kwds <- paste0("%", kwds, "%")
+  kwds <- gsub("'", "''", x = kwds)
   if (ignore_case) {
     like <- " ilike "
   } else{

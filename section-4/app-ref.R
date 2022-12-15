@@ -9,14 +9,6 @@
 
 library(shiny)
 
-# 0. Midterm scheduling (due Nov 1 end of day.)
-
-# 1. Clean up the table column names X
-# 2. Allow multiple brief title keywords X
-# 3. Create a histogram of the phase (almost)
-# 4. Organize files.
-# 5. Fix the Phase plot
-# 6. Plot the concurrent studies (adding a feature/capability).
 
 # Steps to adding a feature:
 # 1. Specify the feature.
