@@ -1,0 +1,23 @@
+---
+title: "Shiny search on clinicaltrials.gov"
+output:
+  html_document:
+    code_folding: true
+------
+
+# Why do write shiny apps?
+
+# Unsolicited advice
+
+1. You should be able to say specifically what your shiny app does and how it fits into existing analysis pipelines.
+    - What are its inputs?
+    - What are its outputs?
+1. _Create the functions that do what you want then put them into shiny._
+1. Fix on the layout first. 
+1. Don't overload the app.
+    - If you add features, justify it with the pipeline
+    - You can always make another app
+1. Be able to capture state 
+    - What were the inputs? 
+    - How did we get to the outputs?
+1. Be able to download the state and outputs 
